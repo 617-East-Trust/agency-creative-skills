@@ -1,0 +1,17 @@
+{
+  "name": "agency-creative-skills",
+  "owner": {
+    "name": "Agency Creative Skills"
+  },
+  "metadata": {
+    "description": "Agency creative studio, premium reports, and technical website soundness skills"
+  },
+  "plugins": [
+    {
+      "name": "agency-creative-skills",
+      "source": "./",
+      "description": "Creative studio + reports + technical soundness for agency web work",
+      "version": "1.0.0"
+    }
+  ]
+}
