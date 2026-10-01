@@ -1,174 +1,93 @@
 ---
 name: premium-report-craft
 description: >-
-  Use when creating, rewriting, or polishing reports, briefings, decks, or PDFs
-  that must look premium, sound human, persuade or convert, and drive a clear
-  decision — executive summaries, board packs, client deliverables, analysis
-  writeups, pitch-style reports.
+  Create or revise decision-ready reports, executive briefings, board/client
+  packs, and evidence-led slide narratives. Use when a written deliverable must
+  persuade, inform a decision, or present findings with a clear thesis,
+  traceable evidence, and polished hierarchy. Do not use for a short email,
+  standalone copy edit, raw research collection, or a technical audit itself.
 ---
+
 # Premium Report Craft
 
 Build reports that look intentional, read like a sharp human wrote them, and move the audience to understand, decide, or act. Story and clarity first; visual polish second; decoration never.
 
 ## Hard rules
 
-1. **One job per report.** Name the primary outcome: inform, decide, approve, buy, escalate, or align. Design every section toward that outcome.
-2. **No implementation theater.** Do not invent metrics, quotes, citations, or chart values. If data is missing, mark gaps clearly and ask or proceed with labeled placeholders only when the user wants a layout mock.
-3. **Human voice is mandatory.** Ban corporate AI filler (`leverage`, `comprehensive solution`, `in today's rapidly evolving landscape`, `delve`, `landscape`, `robust`, empty parallel bullet triples). Acid test: would a respected peer say this out loud in a room?
-4. **One takeaway per page/section.** Action titles with a verb (sentence case). Charts prove the takeaway — never the reverse.
-5. **Beauty with restraint.** Prefer typography, spacing, hierarchy, and one accent system over noise, gradients-for-gradients, and stock illustration clutter.
+1. **One job per report.** Name the outcome: inform, decide, approve, buy, escalate, or align.  
+2. **Evidence ledger for factual claims.** Financial, performance, customer, or research claims need a ledger entry (verified / qualified / hypothesis / placeholder). Concept mocks may omit it when clearly labeled.  
+3. **Human voice.** Concrete nouns and verbs; no corporate AI filler. Acid test: would a respected peer say this out loud?  
+4. **One primary decision-relevant takeaway** per page, slide, or major section. Action titles with a verb. Charts prove the takeaway — never the reverse.  
+5. **Beauty with restraint.** Typography, spacing, hierarchy, one accent — not noise.
 
-## Workflow (follow in order)
+## Format decision tree
 
-### 1. Brief (ask only what you lack)
+```text
+Concise doc or collaborative draft?     → Markdown report (default)
+Fixed-layout client/board handoff?      → PDF report; render and inspect
+Live presentation / PPT/PPTX?           → Dedicated slides tooling when available;
+                                          else load references/deck-narrative.md
+                                          (do not invent missing Slides MCP as a hard requirement)
+Both decision deck + detail?            → Hybrid: deck for the decision; appendix/report for evidence
+```
 
-Capture or confirm:
-- Audience and what they already believe
-- Decision or action required by the end
-- Source material (docs, data, notes, screenshots)
-- Format: markdown memo, HTML review deck, PDF report, or slide outline
-- Tone: board / client / internal / sales
-- Constraints: length, brand colors/fonts, confidential marking, due date
+## Workflow (8 steps)
 
-If a product or brand context file exists in the project, read it first.
+1. **Brief** — Infer audience, decision, format, sources, constraints. Ask one question only if a missing answer would materially change the story or format.  
+2. **Thesis + evidence ledger** — One-sentence thesis; 3–7 claims; map each to evidence or flag unsupported. Ledger fields: ID, claim/visual, source/owner, status, location. See `references/evidence-ledger.md`.  
+3. **Format + scaffold** — Select report / deck / PDF / hybrid. Scaffolds: executive brief · analysis · board/QBR · client deliverable · pitch/conversion · slide narrative. Layout notes: `references/report-layouts.md`.  
+4. **Outline (conditional)** — For decision-critical work with unclear direction, show a short storyline (action titles + evidence notes) before full layout. If outcome and sources are already clear, draft directly and state material assumptions.  
+5. **Draft** — Cover with so-what subtitle → executive summary → body (takeaway → frame → evidence → implication) → clear ask/CTA. Separate findings, recommendations, and hypotheses.  
+6. **Visual system** — One aesthetic from supplied brand materials (Nordic editorial / consulting crisp / agency premium). Do not invent brand claims.  
+7. **Quality gate** — Language, citation, format checks below.  
+8. **Render & inspect** — Every non-Markdown deliverable: open the artifact; check truncation, contrast, orphans, unreadable tables. Fix before delivery.
 
-### 2. Diagnose the story
+## Quality gate
 
-Before drafting:
-- Extract the **thesis** in one sentence
-- List 3–7 **claims** that must be true for the thesis to hold
-- Map each claim to **evidence** (metric, quote, screenshot, table) or flag as unsupported
-- Choose a scaffold:
-  - **Executive brief** — situation → insight → options → recommendation → ask
-  - **Analysis report** — question → method → findings → implications → next steps
-  - **Board / QBR** — outcomes vs plan → drivers → risks → decisions needed
-  - **Client deliverable** — goal → what we did → results → proof → recommended next move
-  - **Pitch / conversion report** — problem → stakes → solution → proof → offer / CTA
-  - **Slide narrative** — one thesis per slide, ≤3 evidence points, spoken transitions
+- [ ] Thesis and ask obvious on page/slide 1–2  
+- [ ] Every major section title is a takeaway, not a topic  
+- [ ] Every chart/table has a so-what nearby; sources noted  
+- [ ] Ledger statuses honest; no fabricated metrics  
+- [ ] Voice passes “say it out loud”  
+- [ ] Hierarchy works in a 3-second skim  
+- [ ] Length matches stakes (depth in appendix if needed)  
+- [ ] Format matches decision tree; non-MD rendered and inspected  
 
-### 3. Outline for approval (when stakes are high)
+## Deliver
 
-For board, client, or sales-critical work, present a short outline (section titles as action takeaways + evidence notes) and get a quick yes before full draft. For low-stakes internal notes, draft directly.
-
-### 4. Write the content
-
-**Voice**
-- Concrete nouns and verbs; short sentences mixed with longer ones
-- Specific numbers and names over abstractions
-- Benefits and decisions over feature dumps
-- Cut throat-clearing openers; start with the point
-
-**Structure**
-- Cover / title block: sharp title + subtitle that states the so-what
-- Executive summary first: findings as cards or bullets + numbered recommendations with severity when useful
-- Body sections: action headline → 1 short framing paragraph → evidence (KPI strip, table, chart, quote) → implication
-- Close with a clear **ask**, decision list, or CTA — never a vague “happy to discuss”
-
-**Conversion / persuasion (when the report must sell or secure approval)**
-- Lead with audience awareness and desired belief shift
-- Prefer PAS / problem–stakes–solution hybrids over generic brochure copy
-- Put risk reversal, proof, and next step near the end — not buried
-- CTAs: `[Action verb] + [specific outcome]`
-
-### 5. Visual system
-
-Pick one aesthetic and execute consistently:
-- **Nordic editorial** — lots of whitespace, restrained type, thin rules, muted palette + one accent
-- **Consulting crisp** — dense but scannable, navy/charcoal, sharp tables, action titles
-- **Agency premium** — distinctive display + refined body type, careful photography/charts, cinematic section openers (still readable)
-
-Apply:
-- Clear type hierarchy (display / H1 / H2 / body / caption)
-- Consistent spacing scale; align columns; avoid orphan labels
-- KPI strips: few metrics, large numbers, tiny labels, trend or context under each
-- Charts: one message each; label directly; no chartjunk; cite source under figure
-- Tables: scannable; highlight the cell that matters
-- Page chrome: quiet header rule, page N / M footer, classification if needed
-- Dark or light theme — commit; do not mix casually
-
-**Motion / web reports only:** subtle entrance or scroll reveals if the deliverable is HTML; respect `prefers-reduced-motion`; animate only transform/opacity.
-
-### 6. Humanize pass (always)
-
-Scan and rewrite:
-- AI-parallel bullet stacks → uneven, spoken rhythm
-- Hedging piles → one clear claim + confidence note if needed
-- Synonym salad → plain words
-- Identical sentence lengths → vary
-- Slide/report “topic labels” → declarative takeaways
-
-### 7. Quality gate before delivery
-
-Check:
-- [ ] Thesis and ask are obvious on page 1 / slide 1–2
-- [ ] Every section title is a takeaway, not a topic
-- [ ] Every chart/table has a so-what nearby
-- [ ] No fabricated data; sources noted where claims need them
-- [ ] Voice passes the “say it out loud” test
-- [ ] Visual hierarchy works in a 3-second skim
-- [ ] Length matches stakes (brief for execs; depth in appendix if needed)
-- [ ] Format matches handoff (md / HTML / PDF / pptx outline)
-
-### 8. Deliver
-
-Ship the primary artifact plus, when useful:
+Primary artifact plus when useful:
 - One-paragraph TL;DR for chat
 - Speaker notes (mouth-ready) for decks
-- Appendix with raw tables or method notes
+- Appendix with raw tables, method notes, and the evidence ledger when the audience is skeptical
 - Open questions / data gaps list
 
-## Output formats (pick one primary)
+Prefer working artifacts over prose about artifacts. If PDF/HTML was rendered, mention that visual inspection passed (or list residual layout issues).
 
-| Format | Use when |
-| --- | --- |
-| Markdown report | Docs, Notion, GitHub, quick share |
-| HTML review deck / report | Visual polish before export |
-| PDF executive report | Client/board handoff |
-| Slide outline (+ optional pptx) | Live presentation; story before design |
+## Visual system (apply in step 6)
 
-If rendering PDF/HTML/PPTX, prefer existing project templates or simple clean CSS; do not invent fake brand systems. Keep CSS restrained: system or distinctive fonts the environment supports, consistent spacing tokens, one accent color.
+Pick one and execute consistently from supplied brand materials:
+- **Nordic editorial** — whitespace, restrained type, thin rules, muted + one accent
+- **Consulting crisp** — dense but scannable, navy/charcoal, sharp tables, action titles
+- **Agency premium** — distinctive display + refined body, careful charts, still readable
+
+KPI strips: few metrics, large numbers, tiny labels. Charts: one message, direct labels, source under figure. Page chrome: quiet header, page N/M, classification if needed.
+
+Minimal Markdown skeleton and layout variants: `references/report-layouts.md`.
+
+## Pairing
+
+
+- Weak persuasion → copy specialist after outline  
+- Weak visuals → design/polish specialist for layout  
+- Weak structure / slides → `references/deck-narrative.md` or slides tooling when present  
+- Technical findings as input → accept from **Technical Website Soundness**; do not re-run the audit here  
+- Multi-discipline engagement → receive brief from **Agency Creative Studio**
 
 ## Anti-patterns
 
-- Walls of bullet points with no thesis
-- Decorative 3D/gradients that fight the data
-- Every insight given equal weight
-- “Summary of everything we found” with no recommendation
-- Stock AI enthusiasm and fake precision
-- Charts without units, sources, or takeaways
-- Writing the full novel before knowing the ask
-
-## Pairing hints
-
-- Weak persuasion → lean on conversion-copy / marketing copywriting skills after the outline
-- Weak visuals → frontend-design / impeccable polish skills for layout pass
-- Weak structure → presentation-writing / deck.md narrative scaffolds
-- Missing brainstorm → clarify thesis with a brainstorming skill before drafting
-
-## Minimal starter skeleton
-
-```markdown
-# [Action-oriented title]
-**Subtitle:** [So-what in one line]
-**Audience / date / classification**
-
-## Executive summary
-- Finding…
-- Finding…
-### Recommendations
-1. …
-2. …
-
-## [Takeaway section title]
-Framing paragraph.
-
-| KPI | Value | Context |
-| --- | --- | --- |
-
-**Implication:** …
-
-## Decision / ask
-- [ ] …
-```
-
-Adapt length and visuals to the chosen format; keep the skeleton’s logic.
+- Walls of bullets with no thesis or ask  
+- Equal weight on every insight  
+- Decorative gradients that fight the data  
+- Fake precision; charts without units/sources  
+- Building a full novel before knowing the ask  
+- Claiming a Slides/PDF tool ran when it did not

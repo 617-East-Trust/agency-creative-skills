@@ -1,18 +1,28 @@
 # Agency Creative Skills
 
-Agent Skills pack for premium agency web work: creative direction, motion/3D, conversion copy, growth (SEO/CRO/CTA/llms.txt), technical soundness, brand/site review, and client-ready reports.
+Agent Skills pack for premium agency web work. Three focused skills with progressive disclosure (`SKILL.md` + `references/`).
 
 Compatible with [Agent Skills](https://agentskills.io) / Cursor / Claude Code / Codex and similar harnesses.
 
 ## Skills
 
-| Skill | Folder | Use when |
+| Skill | Folder | Role |
 | --- | --- | --- |
-| **Agency Creative Studio** | `skills/agency-creative-studio` | Ideate, design-web, motion, immersive-3d, copy, **growth**, report, review, full-pipeline |
-| **Premium Report Craft** | `skills/premium-report-craft` | Beautiful, human, persuasive reports & decks |
-| **Technical Website Soundness** | `skills/technical-website-soundness` | PageSpeed/CWV, security, SEO plumbing, launch go/no-go |
+| **Agency Creative Studio** | `skills/agency-creative-studio` | Engagement **router** + shared brief + integration QA (not a monolith of specialist procedures) |
+| **Premium Report Craft** | `skills/premium-report-craft` | Decision-ready reports, decks, PDFs — evidence ledger + format decision tree |
+| **Technical Website Soundness** | `skills/technical-website-soundness` | Tech audits & launch readiness — passive security boundary, evidence records, calibrated scores |
 
-Also see [CATALOG.md](./CATALOG.md) for curated third-party skill sources discovered while building this pack.
+Also see [CATALOG.md](./CATALOG.md) for curated third-party skill sources, and [ACCEPTANCE-TESTS.md](./ACCEPTANCE-TESTS.md) for routing acceptance prompts.
+
+## Structure
+
+```text
+skills/<skill-name>/
+  SKILL.md              # Lean operational skill (~90–150 lines)
+  references/           # Long procedures (load only when needed)
+```
+
+Install recipes live **here in the README** (and setup docs) — not inside operational `SKILL.md` files.
 
 ## Install
 
@@ -40,15 +50,14 @@ Copy any folder under `skills/` into:
 /plugin install agency-creative-skills@agency-creative-skills
 ```
 
-## Modes quick map (Agency Creative Studio)
+## Routing quick map
 
-- `ideate` · `design-web` · `motion` · `immersive-3d` · `copy`
-- `growth` — SEO, CRO, CTAs, llms.txt
-- `review` — existing websites & brands
-- `report` — hands off to Premium Report Craft
-- `full-pipeline` — end-to-end including growth before launch QA
+- Multi-discipline brand/site/campaign/launch → **Agency Creative Studio**
+- Standalone report/deck/PDF → **Premium Report Craft**
+- PageSpeed/headers/crawl/security hygiene/launch go-no-go → **Technical Website Soundness**
+- Single headline, one component, isolated motion → specialist skills (do **not** activate ACS)
 
-Deep perf/security/ops: use **Technical Website Soundness** (`analyze` | `create` | `go`).
+Optional companion installs (SEO/CRO, motion, etc.) belong in this README / CATALOG — never as hard requirements inside skill bodies.
 
 ## License
 

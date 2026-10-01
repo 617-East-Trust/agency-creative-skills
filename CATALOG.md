@@ -2,9 +2,10 @@
 
 Compiled for agency web (Framer Motion / 3D), brainstorming, conversion copy, reports, and website/brand review.
 
-Custom Grok Bot skills from this work:
-- [Agency Creative Studio](sand-workflow:agency-creative-studio) — routes ideate / design-web / motion / immersive-3d / copy / report / review / full-pipeline
-- [Premium Report Craft](sand-workflow:premium-report-craft) — beautiful, human, persuasive reports
+Custom Grok Bot skills from this work (lean `SKILL.md` + `references/`; install recipes in README only):
+- [Agency Creative Studio](sand-workflow:agency-creative-studio) — engagement router + shared brief + integration QA (`review-existing` / `new-build` / `campaign` / `launch-integration`)
+- [Premium Report Craft](sand-workflow:premium-report-craft) — decision-ready reports/decks/PDFs with evidence ledger
+- [Technical Website Soundness](sand-workflow:technical-website-soundness) — passive tech audits, calibrated scores, launch go/no-go
 
 ---
 
@@ -120,7 +121,7 @@ Custom Grok Bot skills from this work:
 
 ---
 
-## Website & brand review (used by Agency Creative Studio `review` mode)
+## Website & brand review (used by Agency Creative Studio `review-existing` + `references/creative-review-rubric.md`)
 
 Audit existing sites and brands for taste, UX, motion, copy/CRO, consistency, and competitive positioning. Pair with:
 - `frontend-design` / `impeccable` / `web-design-guidelines` — visual & UI QA
