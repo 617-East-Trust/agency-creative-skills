@@ -2,6 +2,10 @@
 
 Use with Technical Website Soundness `go` mode.
 
+## Approval boundary
+
+This workflow is **read-only by default**. A launch review does not authorize a production deploy, redirect/robots/canonical/header change, analytics change, or external submission. Before any such action, show the exact environment, URLs/configuration, proposed change, impact, rollback, and post-change verification; save before-state; obtain explicit approval; then execute one reversible change set. In the full pack, follow the shared approval-and-change-control contract; in a standalone install, preserve these same steps in the evidence record.
+
 ## Release-safe sequence (mandatory)
 1. Record current config + rollback path  
 2. One coherent change set  

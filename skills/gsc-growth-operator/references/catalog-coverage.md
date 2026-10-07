@@ -1,57 +1,30 @@
-# Marketingskills Search Console catalog coverage
+# Marketingskills Search Console catalog map
 
-This skill **adapts the distinct capabilities** in the catalog at `https://www.marketingskills.sh/tools/search-console` into a single router and does not copy third-party skill text or code. Duplicates are intentionally consolidated. The matrix below confirms coverage of all 42 catalog entries observed on 2026-10-07.
+This skill adapts the **intent** of the catalog at `https://www.marketingskills.sh/tools/search-console` into one router. It does not copy third-party text/code, and it does not claim that every catalog entry is a bundled executable. The observed catalog contains 42 entries; duplicates are intentionally grouped below.
 
-| # | Catalog capability | Unified route |
-| ---: | --- | --- |
-| 1 | Google SEO APIs: GSC, PageSpeed, CrUX, Indexing API, GA4 | data acquisition; CWV; indexing guardrails |
-| 2 | GSC + GA4 weekly digest | weekly report; GA4 enrichment |
-| 3 | SEO reports with Ahrefs and GSC | report; optional enrichment |
-| 4 | Live Ahrefs + GSC comprehensive site audit | site audit; optional enrichment |
-| 5 | XML sitemap + index validation | sitemap; indexing |
-| 6 | High-impression, low-CTR keywords | CTR opportunities |
-| 7 | 90-day content decay | content decay |
-| 8 | XML sitemap + index validation | sitemap; indexing |
-| 9 | Ahrefs + GSC comprehensive audit | site audit; optional enrichment |
-| 10 | 90-day content decay | content decay |
-| 11 | GSC performance, indexing, CWV and SEO fixes | overview; indexing; CWV; page/site audit |
-| 12 | Local-business GSC performance and quick wins | overview; CTR; local SEO |
-| 13 | Blog performance: PageSpeed, CrUX, GSC, GA4, Keyword Planner, NLP | page/site audit; CWV; optional enrichment |
-| 14 | Technical/on-page/content SEO audit | site audit |
-| 15 | GSC performance, indexing, CWV, CTR, cannibalization | overview; indexing; CWV; CTR; cannibalization |
-| 16 | SEO operations, keyword research, competitor gaps, trends | operations; new keywords; optional enrichment |
-| 17 | 28-day ranking/traffic drops | drops |
-| 18 | E-E-A-T, readability, AI citation readiness | content quality and AI-search readiness |
-| 19 | High-impression, low-CTR keywords | CTR opportunities |
-| 20 | Branded vs non-branded traffic | brand split |
-| 21 | Period-over-period performance | compare |
-| 22 | Indexing/coverage: robots, noindex, crawl errors | indexing |
-| 23 | Keyword cannibalization | cannibalization |
-| 24 | Period-over-period performance | compare |
-| 25 | Ranking and traffic drops | drops |
-| 26 | URL Inspection indexing diagnosis | indexing |
-| 27 | Indexing status and lag detection | indexing; sitemap |
-| 28 | Fix/control indexation and Indexing API | indexing guardrails; controlled remediation |
-| 29 | Newly ranking keywords and topic clusters | new keywords; topic clusters |
-| 30 | Single-page SEO with Ahrefs/GSC overlay | page audit; optional enrichment |
-| 31 | Branded vs non-branded traffic | brand split |
-| 32 | 28-day GSC dashboard | overview |
-| 33 | Single-page SEO with Ahrefs/GSC overlay | page audit; optional enrichment |
-| 34 | Newly ranking keywords | new keywords |
-| 35 | Schema implementation/debug/validation | schema |
-| 36 | GA4/GSC AI-driven traffic tracking | GA4 and AI traffic |
-| 37 | Full technical/content SEO audit with GSC and Bing | site audit; optional enrichment |
-| 38 | Keyword cannibalization | cannibalization |
-| 39 | GSC performance overview dashboard | overview |
-| 40 | SEO reports with domain, keyword, backlinks, traffic | report; optional enrichment |
-| 41 | Monitor rankings, clicks, impressions, CTR | weekly monitoring |
-| 42 | Universal SEO audit/orchestrator | controller workflow; site audit |
+| Catalog capability group | Unified route | Delivery mode |
+| --- | --- | --- |
+| GSC performance dashboard, weekly monitoring, period comparison | `overview`, `compare`, `weekly` | Local CSV analysis for export-level metrics; agent interpretation |
+| Ranking/traffic drops | `drops` | Local candidate screen; agent diagnosis with release/seasonality/indexation evidence |
+| 90-day content decay | `decay` | Local 90-vs-90 candidate screen; agent refresh/consolidation decision |
+| High-impression / low-CTR | `ctr` | Local position-filtered screen; numeric click gap only with supplied benchmark |
+| Newly ranking keywords / topic clusters | `new-keywords`, topic clustering | Local new-term screen; clustering is an agent procedure |
+| Branded vs non-branded | `brand` | Local configurable brand/ambiguous/excluded split |
+| Cannibalization | `cannibalization` | Local query × page candidate screen; agent intent review |
+| URL Inspection, coverage, indexing lag, sitemap validation | `indexing`, `sitemap` | Local sitemap/inspection cross-reference plus authorized GSC/technical evidence |
+| Fix/control indexation and Indexing API | `indexing` | Agent procedure with explicit approval; no general-purpose API submission client |
+| Page/site/technical audit, schema, E-E-A-T, local SEO | `page-audit`, `site-audit` | Agent procedure; live technical proof → Technical Website Soundness |
+| PageSpeed/CrUX, GA4 AI traffic, Ahrefs/Bing/Keyword Planner | enrichment | Optional authorized integration; no bundled fetch/config client |
+| Reports | `report` | GSC analysis templates; client narrative → Premium Report Craft |
+| Universal SEO orchestrator | controller workflow | Router and handoffs, not a 44-script clone |
 
-## Capability grouping
+## What the local code actually runs
 
-- **Performance intelligence:** overview, compare, drops, CTR, content decay, new queries, brand, cannibalization
-- **Indexation intelligence:** URL Inspection, live URL controls, sitemap and coverage, lag/rechecks
-- **Page/site quality:** technical/on-page/content audit, schema, CWV, E-E-A-T, local patterns
-- **Measurement and operations:** GA4/AI attribution, weekly/monthly reports, optional third-party enrichment
+| Script | Deterministic output | Not established by the script |
+| --- | --- | --- |
+| `gsc_analyze.py` | Validated export summaries, compare gainers/losers, decline/decay candidates, CTR screen, brand buckets, new terms, cannibalization | Property totals, indexation, complete query coverage, causal explanation, CWV, GA4, topic clusters |
+| `sitemap_audit.py` | Local XML quality, duplicate/missing locations, host/lastmod checks, supplied inspection cross-reference | Live URL health, Google indexation, child-sitemap fetches, sitemap submission |
 
-The unified route deliberately keeps source-specific API credentials and vendor-dependent features optional. A GSC CSV export plus live public-site evidence is sufficient for the core performance and indexation workflows.
+## Catalog governance
+
+Treat third-party listings as **discovered**, not automatically reviewed or tested. Record source, revision, license, last review date, intended harness, and tested-harness result before recommending a dependency for client work.

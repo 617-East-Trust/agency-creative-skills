@@ -40,7 +40,7 @@ Both decision deck + detail?            → Hybrid: deck for the decision; appen
 5. **Draft** — Cover with so-what subtitle → executive summary → body (takeaway → frame → evidence → implication) → clear ask/CTA. Separate findings, recommendations, and hypotheses.  
 6. **Visual system** — One aesthetic from supplied brand materials (Nordic editorial / consulting crisp / agency premium). Do not invent brand claims.  
 7. **Quality gate** — Language, citation, format checks below.  
-8. **Render & inspect** — Every non-Markdown deliverable: open the artifact; check truncation, contrast, orphans, unreadable tables. Fix before delivery.
+8. **Render & inspect** — Every non-Markdown deliverable: open the artifact; check truncation, contrast, orphans, unreadable tables. If no renderer or visual-inspection surface is available, say **“generated, not visually inspected”** and list the missing check; never imply the quality gate passed.
 
 ## Quality gate
 
@@ -81,6 +81,7 @@ Minimal Markdown skeleton and layout variants: `references/report-layouts.md`.
 - Weak visuals → design/polish specialist for layout  
 - Weak structure / slides → `references/deck-narrative.md` or slides tooling when present  
 - Technical findings as input → accept from **Technical Website Soundness**; do not re-run the audit here  
+- Organic-search findings as input → accept from **GSC Growth Operator**; do not re-run performance or indexation analysis here
 - Multi-discipline engagement → receive brief from **Agency Creative Studio**
 
 ## Anti-patterns

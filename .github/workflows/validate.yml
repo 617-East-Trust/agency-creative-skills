@@ -1,0 +1,22 @@
+name: Validate skills pack
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate pack metadata and local links
+        run: python scripts/validate_pack.py
+      - name: Run deterministic GSC utility tests
+        run: python -m unittest discover -s skills/gsc-growth-operator/tests -p 'test_*.py' -v

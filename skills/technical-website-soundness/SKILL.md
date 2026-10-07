@@ -17,6 +17,10 @@ Analyze or build websites that are crawlable, fast (PageSpeed / CWV), securely c
 
 > Perform only passive or low-impact checks that the user is authorized to request: public HTTP responses, redirects, page source, declared configuration, dependency scanners, and the user-provided repository/deployment. Do not attempt authentication bypass, exploitation, credential testing, scanning that materially stresses a service, or discovery outside the stated hosts. Escalate to an authorized security assessment when deeper testing is needed.
 
+## Boundary with GSC Growth Operator
+
+Own **live production proof and safe implementation**: HTTP headers, robots/canonical behavior, redirects, rendering, PageSpeed/CrUX collection, security headers, deploy/rollback, and launch go/no-go. Route GSC property data—query/page performance, CTR, drops, cannibalization, URL Inspection, coverage, and sitemap-to-inspection correlation—to **GSC Growth Operator**. Accept its evidence as impact context; do not rerun its property analysis. Client narrative → **Premium Report Craft**.
+
 ## Modes
 
 `analyze` | `create` | `go` — infer from the ask; default `analyze` when given a URL.
@@ -36,11 +40,13 @@ Analyze or build websites that are crawlable, fast (PageSpeed / CWV), securely c
 | 5 | Verified healthy; no material issue in tested scope |
 | 4 | Sound baseline; only minor or isolated improvements remain |
 | 3 | Material gaps to schedule before next growth/launch milestone |
-| 2 | Multiple material gaps or insufficient evidence to rely on the area |
+| 2 | Multiple material, verified gaps requiring remediation before the next milestone |
 | 1 | Immediate production, security, availability, or indexation risk |
 | N/E | Not evaluated — never convert missing evidence into a score |
 
 Scorecard areas: Security · Crawl/Index · Performance · Logistics/Ops · A11y (technical).
+
+Report these independently of the 1–5 condition score: **Evidence coverage** (`complete` / `partial` / `missing`) and **confidence** (`high` / `medium` / `low` / `not evaluated`). Missing evidence is `N/E`, not a score of 2.
 
 ## Calibrated priority (P0–P3)
 
@@ -97,7 +103,7 @@ Full matrix: `references/launch-recheck.md`.
 ## Pairing
 
 - Creative/motion builds must still clear this skill’s perf/security gates  
-- Marketing SEO/CRO depth → specialist when present; else growth reference under ACS  
+- Search Console performance/indexation depth → **GSC Growth Operator**; CRO depth → specialist when present
 - `llms.txt` optional for agents — **not a Google ranking lever**
 
 ## Anti-patterns

@@ -4,14 +4,14 @@
     "name": "Agency Creative Skills"
   },
   "metadata": {
-    "description": "Agency creative studio, premium reports, and technical website soundness skills"
+    "description": "Agency creative orchestration, premium reports, technical website soundness, and evidence-led Google Search Console growth and indexing operations"
   },
   "plugins": [
     {
       "name": "agency-creative-skills",
       "source": "./",
-      "description": "Creative studio + reports + technical soundness for agency web work",
-      "version": "1.0.0"
+      "description": "Creative studio, reports, technical soundness, and Google Search Console growth/indexing operations for agency web work",
+      "version": "1.2.0"
     }
   ]
 }

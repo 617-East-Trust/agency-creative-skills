@@ -1,6 +1,6 @@
 # Agency Creative Skills
 
-Agent Skills pack for premium agency web work. Three focused skills with progressive disclosure (`SKILL.md` + `references/`).
+Agent Skills pack for premium agency web work. Four focused skills with progressive disclosure (`SKILL.md` + `references/`).
 
 Compatible with [Agent Skills](https://agentskills.io) / Cursor / Claude Code / Codex and similar harnesses.
 
@@ -12,6 +12,8 @@ Compatible with [Agent Skills](https://agentskills.io) / Cursor / Claude Code / 
 | **Premium Report Craft** | `skills/premium-report-craft` | Decision-ready reports, decks, PDFs — evidence ledger + format decision tree |
 | **Technical Website Soundness** | `skills/technical-website-soundness` | Tech audits & launch readiness — passive security boundary, evidence records, calibrated scores |
 | **GSC Growth Operator** | `skills/gsc-growth-operator` | Google Search Console performance, indexation diagnostics, sitemap triage, page/site SEO and operating reports |
+
+The four folders above are bundled. GSC’s CSV/sitemap utilities run locally with the standard library; Google API access, GA4, PageSpeed/CrUX, Ahrefs/Bing, live technical checks, and rendering are optional integrations or specialist handoffs with explicit evidence states.
 
 Also see [CATALOG.md](./CATALOG.md) for curated third-party skill sources, and [ACCEPTANCE-TESTS.md](./ACCEPTANCE-TESTS.md) for routing acceptance prompts.
 

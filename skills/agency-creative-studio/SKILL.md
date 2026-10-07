@@ -53,7 +53,8 @@ Require only when **two or more disciplines**, a **client/board deliverable**, o
 | --- | --- | --- | --- |
 | Creative direction | Agency router / design specialist | Audience, offer, brand signals | One-page direction: tension, belief shift, visual system, section narrative |
 | Conversion copy | Copy specialist (when present) | Offer, evidence, desired action | Message hierarchy + CTA matrix |
-| Growth | SEO/CRO specialist when present; else `references/growth-routing.md` | Sitemap, intent, analytics if any | Prioritized backlog + shippable metadata/schema/CTA artifacts |
+| GSC growth and indexation | **GSC Growth Operator** | GSC export/API data, URL Inspection, sitemap/coverage context | Evidence-backed performance or indexing backlog; handoff request for live technical proof |
+| CRO and on-page growth | SEO/CRO specialist when present; else `references/growth-routing.md` | Offer, intent, analytics if any | Prioritized CTA, messaging, metadata, or schema backlog |
 | Technical readiness | **Technical Website Soundness** | URLs/repo/deploy + staging status | Evidence-backed findings or acceptance checklist |
 | Client report/deck | **Premium Report Craft** | Decision, evidence, format, brand | Decision-ready report/deck + source ledger |
 
@@ -62,7 +63,7 @@ Hand off when a specialist skill or tooling is present. Do not invent missing MC
 ## Workflow
 
 1. **Discovery** — goal, audience, offer, constraints, existing assets/URLs  
-2. **Creative direction** — one aesthetic; ban generic AI UI (Inter-only, purple gradients, identical card grids, fade-up-everything)  
+2. **Creative direction** — one justified aesthetic; reject unjustified generic patterns, not legitimate type, color, or layout choices that suit the brief
 3. **Scope / IA** — section map, journeys, deliverable list  
 4. **Specialist execution** — route per contract; keep brief as source of truth  
 5. **Integrated QA** — checklist below  
@@ -76,9 +77,11 @@ Load references only when needed:
 
 - Full pipeline / stages & gates → `references/engagement-workflow.md`
 - Creative teardown → `references/creative-review-rubric.md`
-- SEO/CRO/CTA/llms.txt questions → `references/growth-routing.md` (or specialist)
+- CRO/CTA/llms.txt questions → `references/growth-routing.md` (or specialist)
+- Brand, design-system, motion/3D, or conversion-measurement implementation handoffs → `references/implementation-handoffs.md`
+- Search Console performance, URL Inspection, coverage, or sitemap questions → **GSC Growth Operator**
 
-**Growth (short):** If the engagement needs discoverability or conversion plumbing, assess need then load the growth reference or delegate. Keep `llms.txt` honest: curated agent map, **not a Google ranking factor**. Details live in the reference — not here.
+**Growth (short):** Route Search Console property data, URL Inspection, coverage, and sitemap-to-inspection work to **GSC Growth Operator**. Route live headers, robots/canonical verification, PageSpeed/CrUX collection, deploy/rollback, and launch evidence to **Technical Website Soundness**. Keep `llms.txt` honest: curated agent map, **not a Google ranking factor**.
 
 ## Review (`review-existing`)
 
@@ -104,7 +107,7 @@ Full rubric: `references/creative-review-rubric.md`.
 - [ ] Accessible interactions (focus, contrast, tap targets, reduced motion)  
 - [ ] Performance budget respected (LCP/INP/CLS awareness; no unbudgeted WebGL heroes)  
 - [ ] Conversion clarity: one primary CTA, message match  
-- [ ] Indexability basics noted or handed to technical/growth  
+- [ ] Indexability and performance evidence handed to the correct GSC or technical owner
 - [ ] Claims verified or labeled hypothesis  
 - [ ] Deliverables match brief formats; open assumptions listed  
 
@@ -112,6 +115,6 @@ Full rubric: `references/creative-review-rubric.md`.
 
 - Activating this skill for a headline, one component, or standalone PDF/audit  
 - Running all disciplines when the user asked for one  
-- Duplicating Technical Website Soundness or Premium Report Craft procedures  
+- Duplicating GSC Growth Operator, Technical Website Soundness, or Premium Report Craft procedures
 - Growth theater (llms.txt worship) without crawl/index/CTA basics  
 - Skipping art direction into generic SaaS layout on a premium build

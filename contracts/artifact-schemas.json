@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://617-east-trust.github.io/agency-creative-skills/contracts/artifact-schemas.json",
+  "title": "Agency Creative Skills artifact contracts",
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "required": ["source", "observed_at", "confidence"],
+      "properties": {
+        "source": {"type": "string", "minLength": 1},
+        "observed_at": {"type": "string", "format": "date-time"},
+        "scope": {"type": "string"},
+        "observation": {"type": "string"},
+        "confidence": {"enum": ["high", "medium", "low", "not_evaluated"]},
+        "limitations": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "finding": {
+      "type": "object",
+      "required": ["id", "title", "condition", "evidence", "remediation_owner", "verification"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_-]{1,63}$"},
+        "title": {"type": "string", "minLength": 1},
+        "condition": {"enum": ["healthy", "needs_work", "at_risk", "not_evaluated"]},
+        "priority": {"enum": ["P0", "P1", "P2", "P3", "not_evaluated"]},
+        "evidence": {"$ref": "#/$defs/evidence"},
+        "remediation_owner": {"type": "string", "minLength": 1},
+        "proposed_change": {"type": "string"},
+        "rollback": {"type": "string"},
+        "verification": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "handoff": {
+      "type": "object",
+      "required": ["from", "to", "requested_output", "completion_criteria"],
+      "properties": {
+        "brief_id": {"type": "string"},
+        "from": {"type": "string", "minLength": 1},
+        "to": {"type": "string", "minLength": 1},
+        "finding_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "inputs": {"type": "array", "items": {"type": "string"}},
+        "limitations": {"type": "array", "items": {"type": "string"}},
+        "requested_output": {"type": "string", "minLength": 1},
+        "completion_criteria": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+      },
+      "additionalProperties": false
+    }
+  },
+  "oneOf": [
+    {
+      "title": "Engagement brief",
+      "type": "object",
+      "required": ["brief_id", "decision", "scope", "owners"],
+      "properties": {
+        "brief_id": {"type": "string", "minLength": 1},
+        "decision": {"type": "string", "minLength": 1},
+        "scope": {"type": "string", "minLength": 1},
+        "owners": {"type": "object", "additionalProperties": {"type": "string"}},
+        "constraints": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    {"$ref": "#/$defs/finding"},
+    {
+      "title": "Action backlog",
+      "type": "object",
+      "required": ["brief_id", "actions"],
+      "properties": {
+        "brief_id": {"type": "string", "minLength": 1},
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["finding_id", "owner", "action", "verification"],
+            "properties": {
+              "finding_id": {"type": "string"},
+              "owner": {"type": "string"},
+              "action": {"type": "string"},
+              "verification": {"type": "string"},
+              "approval_required": {"type": "boolean"}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    {"$ref": "#/$defs/handoff"},
+    {
+      "title": "Release verdict",
+      "type": "object",
+      "required": ["verdict", "evidence", "open_finding_ids"],
+      "properties": {
+        "verdict": {"enum": ["GO", "GO_WITH_CONDITIONS", "NO_GO"]},
+        "evidence": {"type": "array", "items": {"$ref": "#/$defs/evidence"}},
+        "open_finding_ids": {"type": "array", "items": {"type": "string"}},
+        "rollback_owner": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  ]
+}

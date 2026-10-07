@@ -64,3 +64,4 @@ Framing paragraph.
 - Prefer existing project templates or restrained CSS  
 - After render: inspect for truncation, contrast, orphans, overflow tables  
 - Keep depth in appendix; exec pages stay scannable
+- If a renderer or image-inspection surface is unavailable, deliver the source artifact with the explicit status **“generated, not visually inspected”**; do not mark visual QA complete.

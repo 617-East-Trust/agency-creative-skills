@@ -1,5 +1,9 @@
 # Indexing evidence record — [URL or template]
 
+**Brief ID:** [optional engagement brief]
+**Finding ID:** [e.g. GSC-014]
+**Authoritative owner:** [GSC Growth Operator / Technical Website Soundness]
+
 ## Decision
 
 **Desired outcome:** [Index / remain excluded / consolidate / redirect / retire]
@@ -34,9 +38,9 @@
 
 ## Safe remediation
 
-| Step | Owner | Change | Guardrail / rollback | Verification |
-| ---: | --- | --- | --- | --- |
-| 1 |  |  |  |  |
+| Step | Owner | Change | Guardrail / rollback | Approval required | Verification |
+| ---: | --- | --- | --- | --- | --- |
+| 1 |  |  |  |  |  |
 
 **External request, if any:** [exact URL(s) and reason; only after user authorization]
 

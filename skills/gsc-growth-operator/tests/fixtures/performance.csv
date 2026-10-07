@@ -1,0 +1,7 @@
+date,query,page,clicks,impressions,position,country,device,search_type
+2026-09-27,acme widgets,https://example.com/widgets/,20,200,5,US,MOBILE,WEB
+2026-09-28,buy widgets,https://example.com/widgets,5,300,11,US,MOBILE,WEB
+2026-09-29,acme jobs,https://example.com/careers,2,100,8,US,MOBILE,WEB
+2026-09-29,acme competitor,https://example.com/compare,1,10,15,US,MOBILE,WEB
+2026-09-29,widget canada,https://example.com/ca/widgets,3,100,3,CA,DESKTOP,WEB
+2026-09-30,free widgets,https://example.com/free,4,80,,US,MOBILE,WEB

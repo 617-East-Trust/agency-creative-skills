@@ -1,0 +1,16 @@
+cases:
+  - prompt: "Here is a GSC export—why did organic clicks drop?"
+    expected_owner: gsc-growth-operator
+    must_not_activate: [premium-report-craft]
+  - prompt: "Why is this URL not indexed? Here is URL Inspection output."
+    expected_owner: gsc-growth-operator
+    supporting_owner: technical-website-soundness
+  - prompt: "Review this release's robots, redirects, headers, and PageSpeed."
+    expected_owner: technical-website-soundness
+    must_not_activate: [gsc-growth-operator]
+  - prompt: "Create a board PDF from verified organic-search findings."
+    expected_owner: premium-report-craft
+    input_owner: gsc-growth-operator
+  - prompt: "Give me five homepage headlines."
+    expected_owner: copy-specialist
+    must_not_activate: [agency-creative-studio, premium-report-craft, technical-website-soundness, gsc-growth-operator]

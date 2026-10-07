@@ -1,0 +1,5 @@
+date,query,page,clicks,impressions,position,country,device,search_type
+2026-09-27,acme widgets,https://example.com/widgets,20,200,5,US,MOBILE,WEB
+2026-09-28,acme widgets,https://example.com/widgets,20,200,5,US,MOBILE,WEB
+2026-09-27,buy widgets,https://example.com/widgets,2,200,12,US,MOBILE,WEB
+2026-09-28,buy widgets,https://example.com/widgets,2,200,12,US,MOBILE,WEB

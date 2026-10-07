@@ -1,91 +1,76 @@
-# Growth routing — SEO / CRO / CTA / llms.txt
+# Growth routing — CRO, CTA, and specialist handoffs
 
-Condensed growth guidance for Agency Creative Studio. Prefer a dedicated SEO/CRO specialist skill when present; otherwise use this reference. Do not treat missing MCP tools as hard requirements.
+Keep Agency Creative Studio a router. Use this reference for **CRO, CTA hierarchy, and agent legibility** only; do not reproduce Search Console or live technical audit procedures.
+
+## Routing boundary
+
+| Question / evidence | Owner | Output |
+| --- | --- | --- |
+| GSC query/page performance, CTR, drops, decay, cannibalization, brand demand, URL Inspection, coverage, sitemap-to-inspection correlation | **GSC Growth Operator** | Evidence-led growth or indexation backlog |
+| Live HTTP headers, robots/canonical behavior, redirects, rendering, PageSpeed/CrUX collection, security headers, deploy/rollback, launch go/no-go | **Technical Website Soundness** | Production-surface evidence and safe implementation/recheck |
+| Client-facing narrative of either analysis | **Premium Report Craft** | Decision-ready report/deck, without rerunning source analysis |
+| Conversion friction, offer, CTA hierarchy, and copy test hypotheses | This reference or a CRO/copy specialist | Prioritized conversion backlog |
+
+A “not indexed” prompt starts with **GSC Growth Operator** when GSC/URL Inspection evidence is requested or available. It requests Technical Website Soundness only for live production verification or remediation. A “slow page” prompt starts with **Technical Website Soundness**; GSC may supply impact context but does not collect CWV evidence.
 
 ## When to load this
-- Engagement needs discoverability, conversion rate, CTA hierarchy, or agent-legibility work
-- Landing page “not ranking” or “not converting” inside a broader agency engagement
-- Marketing launch plumbing before Technical Website Soundness `go`
+
+- An Agency Creative Studio engagement needs conversion design, CTA hierarchy, or agent-legibility work.
+- A landing page needs message-match or form/offer diagnosis after technical/indexation blockers are assigned to their owners.
+- A client needs a joined-up launch brief; specialist output is already available or explicitly queued.
 
 ## Honesty bar
-- Never invent rankings, traffic, or keyword volumes
-- Fix crawl/index and CWV basics before creative A/B tests on a broken page
-- **`llms.txt` is not a Google ranking factor.** It is a curated Markdown map for agents ([llmstxt.org](https://llmstxt.org/)). Do not sell it as a ranking hack.
 
-## Sub-areas
+- Never invent rankings, traffic, keyword volume, CWV, or conversion metrics.
+- Do not run copy tests on a broken, slow, or unindexable page.
+- **`llms.txt` is not a Google ranking factor.** It is a curated Markdown map for agents ([llmstxt.org](https://llmstxt.org/)), not a substitute for crawl/index basics.
 
-| Sub | Use when |
-| --- | --- |
-| `seo` | Crawl/index, on-page, IA, schema, CWV-as-SEO |
-| `cro` | Funnel/landing conversion |
-| `cta` | Button/offer hierarchy and copy tests |
-| `llms` | `/llms.txt`, markdown mirrors, agent readability |
-| `full-growth` | End-to-end growth pass |
-
-## A. Technical + on-page SEO (summary)
-
-Pipeline: **Crawl → Render → Index → Signals**.
-
-- `/robots.txt` at host root; don’t block CSS/JS or money pages; include `Sitemap:`
-- XML sitemap = only 200, canonical, indexable URLs
-- One canonical host + HTTPS; no redirect chains
-- `noindex` via meta/X-Robots-Tag for thank-you/staging/faceted junk
-- Real `<a href>` internals; avoid hash-router public content; prefer SSR/SSG for critical SEO content
-- Unique title + H1; internal links to money pages
-- JSON-LD matching **visible** content only
-- Field p75 targets: LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1
-- AI crawlers: separate training vs answer bots intentionally; never block Googlebot by accident (e.g. Google-Extended ≠ Googlebot)
-
-Deep headers/perf/security → **Technical Website Soundness**.
-
-## B. CRO (LIFT-oriented)
+## CRO (LIFT-oriented)
 
 One visitor type · one offer · one primary action.
 
 Raise: value proposition, relevance, clarity, urgency. Cut: anxiety, distraction.
 
-1. Message match (headline ↔ ad/email/query)  
-2. Above-fold: what / who / outcome / primary CTA  
-3. Proof near claims  
-4. Benefits > features; cut form fields  
-5. Objection handling  
-6. Repeat the **same** primary CTA after proof and at bottom  
-7. Test order: headline → value prop → CTA → proof → form/layout  
-8. Don’t test copy on a broken/slow page  
+1. Message match (headline ↔ ad/email/query)
+2. Above-fold: what / who / outcome / primary CTA
+3. Proof near claims
+4. Benefits over features; cut unnecessary form fields
+5. Objection handling
+6. Repeat the same primary CTA after proof and at the bottom
+7. Test order: headline → value proposition → CTA → proof → form/layout
+8. Hand off technical/page-speed defects before testing copy
 
-## C. CTAs
+## CTA
 
-Formula: `[Action verb] + [specific outcome]`  
+Formula: `[Action verb] + [specific outcome]`
+
 Strong: `Get my free audit`, `Book a 15-min intro` · Weak: `Submit`, `Learn more`
 
-- One primary (filled, high contrast); secondary ghost/link only  
-- Microcopy for time/cost/risk reversal  
-- ≥44×44px targets; same primary label across the landing page  
+- One primary (filled, high contrast); secondary ghost/link only
+- Microcopy for time/cost/risk reversal
+- ≥44×44px targets; same primary label across the landing page
 
-## D. llms.txt
+## Agent legibility
 
 | File | Role |
 | --- | --- |
-| `robots.txt` | Crawl allow/disallow |
-| `sitemap.xml` | Full indexable URL list |
-| `llms.txt` | Curated “read this first” map — grants nothing; **not a Google ranking factor** |
+| `robots.txt` | Crawl allow/disallow; technical owner verifies behavior |
+| `sitemap.xml` | Canonical indexable URL declaration; GSC/technical owners validate evidence |
+| `llms.txt` | Curated “read this first” map; grants nothing and is not a Google ranking factor |
 
-Format: `#` H1 → optional `>` summary → `##` sections with `- [Name](url): notes` → optional `## Optional`.
+Ship roughly 10–20 hand-curated links (services, work, process, pricing, contact, brand)—not a sitemap dump. Optional: `.md` mirrors; `rel="alternate" type="text/markdown"`.
 
-Ship ~10–20 hand-curated links (services, work, process, pricing, contact, brand) — not a sitemap dump. Optional: `.md` mirrors; `rel="alternate" type="text/markdown"`.
+## Output format
 
-## Growth output format
-
-1. Snapshot (discoverability + convertibility)  
-2. Scorecard 1–5 or N/E: Technical SEO, On-page/IA, CRO, CTA clarity, Agent legibility  
-3. P0/P1/P2 actions with evidence, fix, effort  
-4. Artifacts: robots/sitemap diffs, title/H1 map, CTA matrix, `/llms.txt` draft, schema  
-5. Test backlog (hypothesis + metric)  
-6. Handoffs: copy, design/motion, Technical Website Soundness, Premium Report Craft  
+1. Snapshot: conversion context and supplied evidence
+2. P0–P3 conversion actions with hypothesis, owner, and metric
+3. CTA matrix and message hierarchy
+4. Explicit specialist handoffs for GSC, technical readiness, and client reporting
 
 ## Anti-patterns
-- llms.txt as a Google hack  
-- Ranking advice without crawl/index basics  
-- Five competing CTAs  
-- CRO that trashes LCP (autoplay, unbudgeted 3D above the fold)  
-- Invented traffic/keyword metrics
+
+- Treating `llms.txt` as a Google ranking tactic
+- Reproducing URL Inspection, sitemap, canonical, or CWV procedures owned elsewhere
+- Five competing CTAs
+- CRO that degrades LCP with autoplay or unbudgeted 3D
+- Invented traffic, keyword, or conversion metrics
