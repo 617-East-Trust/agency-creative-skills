@@ -3,7 +3,7 @@
 Compiled for agency web (Framer Motion / 3D), brainstorming, conversion copy, reports, and website/brand review.
 
 Bundled local skills from this work (lean `SKILL.md` + `references/`; install recipes in README only):
-- [GSC Growth Operator](skills/gsc-growth-operator/SKILL.md) — unified GSC growth and indexing operator; performance analysis, sitemap/URL Inspection diagnostics, technical/page audits, and reports
+- [GSC Growth Operator](skills/gsc-growth-operator/SKILL.md) — unified GSC growth and indexing operator; performance analysis, sitemap/URL Inspection diagnostics, and human-gated remediation plans/actions
 - [Agency Creative Studio](skills/agency-creative-studio/SKILL.md) — engagement router + shared brief + integration QA (`review-existing` / `new-build` / `campaign` / `launch-integration`)
 - [Premium Report Craft](skills/premium-report-craft/SKILL.md) — decision-ready reports/decks/PDFs with evidence ledger
 - [Technical Website Soundness](skills/technical-website-soundness/SKILL.md) — passive tech audits, calibrated scores, launch go/no-go

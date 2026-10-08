@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "plan_id": "GSC-EXAMPLE-001-redirect",
+  "finding_id": "GSC-EXAMPLE-001",
+  "status": "planned",
+  "action": {
+    "type": "github_pull_request",
+    "owner": "Technical Website Soundness",
+    "target": {
+      "environment": "production",
+      "repository": "owner/repository",
+      "branch": "fix/gsc-example-001-redirect",
+      "files": ["hosting/redirects.conf"],
+      "urls": ["https://www.example.com/path"],
+      "expected_canonical_host": "example.com"
+    },
+    "payload": {
+      "summary": "Redirect the www host to apex while preserving path and query string."
+    }
+  },
+  "risk": {
+    "impact": "Affects public host routing.",
+    "known_uncertainty": "Form and campaign path behavior must be verified before deployment."
+  },
+  "preflight": {
+    "captured_at": "2026-10-07T00:00:00Z",
+    "passed": false,
+    "evidence": ["URL Inspection record", "redirect matrix", "current configuration revision"],
+    "checks": ["Core routes and form paths mapped", "rollback revision available"]
+  },
+  "rollback": {
+    "method": "Revert the focused change or restore the saved configuration revision.",
+    "owner": "Technical Website Soundness",
+    "trigger": "Any required route or form fails immediate verification."
+  },
+  "verification": {
+    "immediate": ["Confirm one-hop redirect, final canonical, robots, and form path."],
+    "recrawl": ["Reinspect apex and www URLs after Google recrawls."],
+    "success_condition": "Apex is the final route and Google-selected canonical after recrawl."
+  },
+  "approval": {
+    "required": true,
+    "state": "not_requested",
+    "approved_by": "",
+    "approved_at": ""
+  },
+  "execution": {
+    "environment": "sandbox",
+    "adapter": "github",
+    "result": "not_started"
+  }
+}

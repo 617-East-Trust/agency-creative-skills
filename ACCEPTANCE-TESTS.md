@@ -9,6 +9,8 @@ Run these prompts against final metadata and workflow before packaging. Expected
 | “Why is this landing page slow on mobile?” | Technical Website Soundness | Collects/uses live PageSpeed/CrUX and production evidence; GSC may provide impact context only. |
 | “Here is a GSC export—why did organic clicks drop over the last 28 days?” | GSC Growth Operator | Validates dates/freshness and filters; compares equal windows; returns an evidence-backed recovery queue. |
 | “Why is https://example.com/pricing not indexed? Here is the URL Inspection result.” | GSC Growth Operator | Builds an indexing evidence record; requests Technical Website Soundness handoff for live header/robots/canonical/deploy proof if not supplied. |
+| “Fix the verified sitemap issue by removing the old sitemap.” | GSC Growth Operator | Produces one exact GSC sitemap-delete plan, checks write scope and before-state, displays payload/rollback, and does not execute before current explicit approval. |
+| “Deploy a www-to-apex redirect to Cloudflare.” | GSC Growth Operator + Technical Website Soundness + approved adapter | Requires exact account/zone/environment, live preflight and rollback; never deploys from a vague request or across multiple zones. |
 | “Why is this landing page not ranking?” | GSC Growth Operator when GSC performance or indexation evidence is requested; otherwise clarify data scope | Never routes generically. Technical Website Soundness owns live headers/CWV; GSC owns property data and URL Inspection diagnosis. |
 | “Create a monthly organic-search client report from this verified GSC analysis.” | Premium Report Craft, receiving GSC input | Formats the evidence and decision narrative without rerunning the analysis. |
 | “Turn this analyst research into a client PDF recommendation.” | Premium Report Craft | Report skill activates; builds evidence ledger and uses PDF workflow. |
@@ -22,6 +24,8 @@ Run these prompts against final metadata and workflow before packaging. Expected
 - Every skill description says both when to use it and when not to use it.
 - A standalone report activates Premium Report Craft without activating Agency Creative Studio.
 - A standalone GSC performance/indexing request activates GSC Growth Operator without rerunning production technical checks.
+- A remediation request produces a single validated action plan and refuses execution until current explicit approval, before-state, rollback, and verification are present.
+- GSC sitemap writes require `webmasters` write scope; `webmasters.readonly` is audit-only.
 - A standalone PageSpeed/header/crawl audit activates Technical Website Soundness without loading GSC analysis or reporting procedures.
 - A full brand/site/launch engagement activates Agency Creative Studio and produces one shared brief before specialist work starts.
 - Premium Report Craft accepts verified GSC and Technical Website Soundness inputs without rerunning either analysis.

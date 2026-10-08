@@ -47,6 +47,10 @@ Follow `indexing-playbook.md`. Use URL Inspection for Google-side state and pres
 
 Validate supplied XML/index structure, locations, duplicates, host inconsistencies, future/invalid `lastmod`, and supplied inspection cross-references. The local utility returns `PASS`, `FAIL`, or `INCOMPLETE`; it never fetches URLs. An index remains incomplete until all child sitemaps are supplied/audited. Technical Website Soundness verifies live canonical 200 indexability.
 
+### Controlled remediation
+
+Use `remediation-control.md` for any write. Create one plan from `templates/remediation-plan.md` or `.json`; validate it at `planned` stage; show the exact payload and rollback; obtain current explicit human approval; capture before-state; validate at `executable` stage; then execute one reversible action through the named adapter. `webmasters.readonly` cannot submit/delete sitemaps. Redirect, canonical, robots, `noindex`, CMS, CDN, and deploy actions require Technical Website Soundness evidence plus the exact repository/account/zone/site/environment. Record immediate verification and a later Google-side recheck; neither a deploy nor a sitemap submission guarantees indexation.
+
 ### Page/site audits, CWV, schema, and local SEO
 
 Use GSC performance/Inspection data to prioritize pages. Combine it with supplied technical evidence, content/intent review, schema that matches visible content, local-service context, and internal linking. Technical Website Soundness collects PageSpeed/CrUX; carry source, route, device, test date, and lab/field status with every metric. Give each issue one owner and recheck instruction.
