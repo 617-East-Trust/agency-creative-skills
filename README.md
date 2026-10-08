@@ -64,6 +64,18 @@ Copy any folder under `skills/` into:
 
 Optional companion installs (SEO/CRO, motion, etc.) belong in this README / CATALOG — never as hard requirements inside skill bodies.
 
+## Next steps
+
+Ship the contracts already on `main`. Do not add another skill or a Search Console API client until these are true.
+
+1. **Enforce routing in CI.** `tests/routing-cases.yaml` is unused. `scripts/validate_pack.py` should fail if a case’s expected owner is missing from `AGENTS.md` or `ACCEPTANCE-TESTS.md`, and if a skill description lacks both a use trigger and a do-not-use trigger. This is a static check, not a model eval.
+2. **Validate one artifact against the schema.** Add a fixture finding and a fixture handoff, and fail CI if they do not match `contracts/artifact-schemas.json`. Point the schema `$id` at this repository, not a GitHub Pages host that does not exist.
+3. **Bring GSC templates up to that schema.** `templates/weekly-report.md` and `templates/site-audit.md` predate the contract. `references/indexing-playbook.md` needs rows for manual actions, security issues, and the links report, with an explicit `not evaluated` state. One finding ID, one owner, one evidence record.
+4. **Decide [pull request #2](https://github.com/617-East-Trust/agency-creative-skills/pull/2) before more analyzer work.** `feat/gsc-remediation-controller` is the execution layer for `contracts/approval-and-change-control.md`. Merge it only if it shows the exact property and URLs, saves before-state, requires explicit approval, makes one reversible change, and records the recheck. Close it if it submits anything by default.
+5. **Add two examples, not a new catalog.** One completed indexing evidence record that hands live headers to Technical Website Soundness. One Premium Report Craft handoff that consumes a finished GSC analysis and does not rerun it.
+
+Out of this pass: topic clustering, GA4 channel setup, CrUX fetch, and a Search Console API client. Those stay agent procedures or optional integrations until the items above are enforced.
+
 ## License
 
 MIT
