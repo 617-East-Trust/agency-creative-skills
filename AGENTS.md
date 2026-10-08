@@ -32,6 +32,16 @@ Skills install to `.agents/skills/` (cross-agent) and/or `.claude/skills/` / `.c
 
 ## Ownership and handoffs
 
+### Static routing owner IDs
+
+`tests/routing-cases.yaml` uses the following stable owner IDs. The external `copy-specialist` route is intentionally not bundled in this pack.
+
+- `agency-creative-studio`
+- `gsc-growth-operator`
+- `technical-website-soundness`
+- `premium-report-craft`
+- `copy-specialist`
+
 | Ask type | Owner | Boundary |
 | --- | --- | --- |
 | Complex multi-discipline engagement | `agency-creative-studio` | Owns shared brief, specialist routing, and integrated QA—not specialist analysis. |

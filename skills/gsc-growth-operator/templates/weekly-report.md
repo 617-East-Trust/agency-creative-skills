@@ -40,17 +40,28 @@
 | --- | --- | --- | --- |
 |  |  |  |  |
 
-## Prioritized actions
+## Finding records
 
-| Priority | Action | Owner | Expected signal | Verification | Risk / rollback |
-| --- | --- | --- | --- | --- | --- |
-| P1 |  |  |  |  |  |
+Create one record per material finding. Keep one ID, one owner, and one authoritative evidence record.
 
-## Indexation watchlist
+| Finding ID | Condition / priority | Evidence source · observed at · confidence | Remediation owner | Proposed change | Rollback | Verification |
+| --- | --- | --- | --- | --- | --- | --- |
+| GSC- | [healthy / needs_work / at_risk / not_evaluated] · P[0–3] |  |  |  |  |  |
 
-| URL/template | Current state | Evidence | Next check | Status |
+## Action backlog
+
+| Finding ID | Owner | Action | Approval required | Verification |
 | --- | --- | --- | --- | --- |
-|  |  |  |  |  |
+| GSC- |  |  | [yes / no] |  |
+
+## Search Console health and indexation watchlist
+
+| URL/template or report | Current state | Evidence / check date | Status | Next check |
+| --- | --- | --- | --- | --- |
+| [URL or sitemap] |  |  |  |  |
+| Manual actions | [clear / issue / not evaluated] | [authorized Console source · date] |  |  |
+| Security issues | [clear / issue / not evaluated] | [authorized Console source · date] |  |  |
+| Links report | [reviewed / not evaluated] | [authorized Console source · date] |  |  |
 
 ## Next measurement
 

@@ -16,7 +16,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Validate pack metadata and local links
+      - name: Install validation dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-dev.txt
+      - name: Validate pack metadata, routing, contracts, and local links
         run: python scripts/validate_pack.py
+      - name: Run pack guard regression tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
       - name: Run deterministic GSC utility tests
         run: python -m unittest discover -s skills/gsc-growth-operator/tests -p 'test_*.py' -v

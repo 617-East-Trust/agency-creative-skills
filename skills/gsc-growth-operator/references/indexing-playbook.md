@@ -8,7 +8,8 @@ Use this route whenever a user asks why a URL/page set is not indexed, disappear
 2. Record live evidence: response and final redirect target; `X-Robots-Tag`; meta robots in raw/rendered HTML; canonical; robots.txt applicability; content/soft-404 signs; and sitemap/internal-link presence.
 3. Obtain the latest URL Inspection result. Record the indexed version’s Google canonical, user canonical, last crawl time, fetch/robots states, and coverage/exclusion wording.
 4. Compare a small cohort: one affected URL, one healthy peer from the same template, and one intended canonical. This distinguishes template/deployment faults from page-quality or duplication cases.
-5. Trace the condition to an owned control (CMS field, template, CDN/header rule, redirect/canonical rule, robots deployment, sitemap build, content policy) and formulate the smallest reversible repair.
+5. Check manual actions, security issues, and the links report through an authorized Console source. If a report is unavailable, record **`not evaluated`** with the check date; never infer a clean account from absent export data.
+6. Trace the condition to an owned control (CMS field, template, CDN/header rule, redirect/canonical rule, robots deployment, sitemap build, content policy) and formulate the smallest reversible repair.
 
 ## Classification and response matrix
 
@@ -23,6 +24,9 @@ Use this route whenever a user asks why a URL/page set is not indexed, disappear
 | Crawled – currently not indexed | canonical/robots/server clean; content quality, duplication, internal links, crawl demand | content and internal-link strategy; site quality | Improve unique utility, remove near-duplicates, strengthen relevant links; do not blindly submit repeatedly | observe crawl/index change over a later comparison window |
 | Discovered – currently not indexed | sitemap, internal linking, URL volume, server health/crawl demand | sitemap/link architecture, server responsiveness, quality | Ensure desired URLs are discoverable and valuable; fix scale/quality blockers before requesting indexing | crawl/sitemap validation + later inspection |
 | Sitemap status mismatch | sitemap XML, URL eligibility, lastmod, property/host, canonical | sitemap generator/build | Include only canonical 200-indexable URLs; remove redirects/noindex/duplicates | resubmit if needed; monitor sitemap report |
+| Manual actions report | authorized Console report, property, and check date | policy / sitewide quality / unknown | Record `clear`, issue detail, or `not evaluated`; do not make content/technical guesses from an unavailable report | authorized Console recheck after remediation |
+| Security issues report | authorized Console report, property, and check date | security / malware / hacked content / unknown | Record `clear`, issue detail, or `not evaluated`; route active security incidents to the authorized security process | authorized Console recheck after remediation |
+| Links report | authorized Console report, property, and check date | internal/external linking context / unknown | Record `reviewed` or `not evaluated`; use as context, not a causal conclusion | recheck only when link diagnosis is material |
 | Indexing API request considered | page type and Google policy eligibility | publishing flow | Use only eligible JobPosting/BroadcastEvent URLs; otherwise use normal discovery/crawl mechanisms | API response + later inspection, never a promised index date |
 
 ## Controlled remediation sequence
@@ -48,6 +52,7 @@ Use this route whenever a user asks why a URL/page set is not indexed, disappear
 | URL and intended canonical | Exact values |
 | Desired outcome | Index, remain excluded, consolidate, redirect, retire |
 | Observed state | GSC Inspection + live HTTP/source/crawl evidence |
+| Console health | Manual actions, security issues, and links: source/check date plus `clear`, issue detail, or `not evaluated` |
 | Diagnosis | Evidence-supported, with confidence |
 | Root control | CMS/template/configuration/redirect/sitemap/content owner |
 | Change | Smallest safe remediation and rollback |

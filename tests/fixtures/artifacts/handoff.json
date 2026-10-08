@@ -1,0 +1,10 @@
+{
+  "brief_id": "ENG-EXAMPLE-021",
+  "from": "gsc-growth-operator",
+  "to": "technical-website-soundness",
+  "finding_ids": ["GSC-EXAMPLE-021"],
+  "inputs": ["URL Inspection result", "sitemap record", "canonical-host comparison"],
+  "limitations": ["No live redirect, header, or rendered-canonical evidence was collected by GSC."],
+  "requested_output": "Exact production route evidence, rollback-ready change plan, and immediate verification result.",
+  "completion_criteria": ["Final route and canonical recorded", "Rollback is actionable", "Finding status is updated"]
+}

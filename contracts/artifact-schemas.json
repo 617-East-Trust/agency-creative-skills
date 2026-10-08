@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://617-east-trust.github.io/agency-creative-skills/contracts/artifact-schemas.json",
+  "$id": "https://raw.githubusercontent.com/617-East-Trust/agency-creative-skills/main/contracts/artifact-schemas.json",
   "title": "Agency Creative Skills artifact contracts",
   "$defs": {
     "evidence": {

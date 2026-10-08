@@ -1,0 +1,18 @@
+{
+  "id": "GSC-EXAMPLE-021",
+  "title": "Canonical host conflict on a sitemap-listed URL",
+  "condition": "needs_work",
+  "priority": "P1",
+  "evidence": {
+    "source": "URL Inspection API and supplied sitemap",
+    "observed_at": "2026-10-07T22:52:00Z",
+    "scope": "sc-domain:example.com; https://example.com/service-area",
+    "observation": "Google selected the www variant while the sitemap and declared canonical use apex.",
+    "confidence": "high",
+    "limitations": ["Live redirect and header evidence must come from Technical Website Soundness."]
+  },
+  "remediation_owner": "technical-website-soundness",
+  "proposed_change": "Verify host routing, then create one approved path-preserving redirect change.",
+  "rollback": "Revert the focused redirect/configuration revision if required routes fail verification.",
+  "verification": "Confirm final route/canonical immediately and re-inspect after recrawl."
+}

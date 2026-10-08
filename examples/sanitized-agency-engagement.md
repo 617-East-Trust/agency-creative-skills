@@ -30,3 +30,5 @@
 ```
 
 The full contract is in `../contracts/artifact-schemas.json`; approval control is in `../contracts/approval-and-change-control.md`.
+
+For focused examples, see [completed indexing evidence record](./completed-indexing-evidence-record.md) and [Premium Report Craft GSC handoff](./premium-report-craft-gsc-handoff.md).

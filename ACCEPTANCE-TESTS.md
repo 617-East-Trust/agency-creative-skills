@@ -2,6 +2,8 @@
 
 Run these prompts against final metadata and workflow before packaging. Expected result is a **routing decision**, not necessarily a complete build.
 
+**Static routing owner IDs:** `agency-creative-studio`, `gsc-growth-operator`, `technical-website-soundness`, `premium-report-craft`, and external `copy-specialist`.
+
 | Test prompt | Expected owner | Expected outcome |
 | --- | --- | --- |
 | “Give me five sharper homepage headlines.” | Copy/natural-writing specialist | Agency, report, technical, and GSC skills do not activate. |

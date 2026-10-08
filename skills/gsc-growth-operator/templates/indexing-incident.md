@@ -1,7 +1,9 @@
 # Indexing evidence record — [URL or template]
 
 **Brief ID:** [optional engagement brief]
+
 **Finding ID:** [e.g. GSC-014]
+
 **Authoritative owner:** [GSC Growth Operator / Technical Website Soundness]
 
 ## Decision
@@ -25,6 +27,9 @@
 | Last crawl / fetch state |  |  |
 | Sitemap presence |  |  |
 | Internal links / healthy peer comparison |  |  |
+| Manual actions | [clear / issue / not evaluated] |  |
+| Security issues | [clear / issue / not evaluated] |  |
+| Links report | [reviewed / not evaluated] |  |
 
 ## Diagnosis
 
