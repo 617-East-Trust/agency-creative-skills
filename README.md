@@ -11,9 +11,11 @@ Compatible with [Agent Skills](https://agentskills.io) / Cursor / Claude Code / 
 | **Agency Creative Studio** | `skills/agency-creative-studio` | Engagement **router** + shared brief + integration QA (not a monolith of specialist procedures) |
 | **Premium Report Craft** | `skills/premium-report-craft` | Decision-ready reports, decks, PDFs — evidence ledger + format decision tree |
 | **Technical Website Soundness** | `skills/technical-website-soundness` | Tech audits & launch readiness — passive security boundary, evidence records, calibrated scores |
-| **GSC Growth Operator** | `skills/gsc-growth-operator` | Google Search Console performance, indexation diagnostics, sitemap triage, page/site SEO and operating reports |
+| **GSC Growth Operator** | `skills/gsc-growth-operator` | GSC performance/indexation diagnosis plus human-gated remediation plans, approved sitemap actions, and adapter-controlled repository/production changes |
 
-The four folders above are bundled. GSC’s CSV/sitemap utilities run locally with the standard library; Google API access, GA4, PageSpeed/CrUX, Ahrefs/Bing, live technical checks, and rendering are optional integrations or specialist handoffs with explicit evidence states.
+The four folders above are bundled. GSC’s CSV/sitemap utilities, remediation-plan validator, and a dry-run-by-default approved sitemap executor run locally with the standard library. Google API access, GSC write scope, GitHub, Cloudflare, CMS, GA4, PageSpeed/CrUX, live technical checks, and rendering are optional integrations or specialist handoffs with explicit evidence states.
+
+> **Change-control boundary:** The pack is read-only by default. It can execute a sitemap write, pull request, or production adapter action only after it has captured before-state, validated one remediation plan, shown the exact payload and rollback, and obtained explicit human approval. A Search Console submit/delete call does not guarantee crawling or indexation; a PR does not mean deployed.
 
 Also see [CATALOG.md](./CATALOG.md) for curated third-party skill sources, and [ACCEPTANCE-TESTS.md](./ACCEPTANCE-TESTS.md) for routing acceptance prompts.
 
@@ -59,7 +61,7 @@ Copy any folder under `skills/` into:
 - Multi-discipline brand/site/campaign/launch → **Agency Creative Studio**
 - Standalone report/deck/PDF → **Premium Report Craft**
 - PageSpeed/headers/crawl/security hygiene/launch go-no-go → **Technical Website Soundness**
-- GSC performance, indexing/coverage, sitemap, CTR, content decay, cannibalization, organic reports → **GSC Growth Operator**
+- GSC performance, indexing/coverage, sitemap, CTR, content decay, cannibalization, or approved remediation planning → **GSC Growth Operator**
 - Single headline, one component, isolated motion → specialist skills (do **not** activate ACS)
 
 Optional companion installs (SEO/CRO, motion, etc.) belong in this README / CATALOG — never as hard requirements inside skill bodies.

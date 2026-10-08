@@ -12,7 +12,7 @@ This skill adapts the **intent** of the catalog at `https://www.marketingskills.
 | Branded vs non-branded | `brand` | Local configurable brand/ambiguous/excluded split |
 | Cannibalization | `cannibalization` | Local query × page candidate screen; agent intent review |
 | URL Inspection, coverage, indexing lag, sitemap validation | `indexing`, `sitemap` | Local sitemap/inspection cross-reference plus authorized GSC/technical evidence |
-| Fix/control indexation and Indexing API | `indexing` | Agent procedure with explicit approval; no general-purpose API submission client |
+| Fix/control indexation and Indexing API | `indexing`, `remediate` | Human-gated remediation plan; sitemap submit/delete only with verified GSC write scope; no general-purpose Indexing API use |
 | Page/site/technical audit, schema, E-E-A-T, local SEO | `page-audit`, `site-audit` | Agent procedure; live technical proof → Technical Website Soundness |
 | PageSpeed/CrUX, GA4 AI traffic, Ahrefs/Bing/Keyword Planner | enrichment | Optional authorized integration; no bundled fetch/config client |
 | Reports | `report` | GSC analysis templates; client narrative → Premium Report Craft |
@@ -24,6 +24,8 @@ This skill adapts the **intent** of the catalog at `https://www.marketingskills.
 | --- | --- | --- |
 | `gsc_analyze.py` | Validated export summaries, compare gainers/losers, decline/decay candidates, CTR screen, brand buckets, new terms, cannibalization | Property totals, indexation, complete query coverage, causal explanation, CWV, GA4, topic clusters |
 | `sitemap_audit.py` | Local XML quality, duplicate/missing locations, host/lastmod checks, supplied inspection cross-reference | Live URL health, Google indexation, child-sitemap fetches, sitemap submission |
+| `validate_remediation_plan.py` | Structural gate for one human-approved remediation plan, action allowlist, required targets/rollback/verification, and credential-leak screening | Human approval itself, OAuth writes, production proof, deployment, crawl/indexation outcome |
+| `gsc_sitemap_action.py` | Validated dry run by default; one approved GSC sitemap submit/delete with before/after list capture when invoked with write scope and explicit execution flags | Human approval itself, generic Indexing API requests, live technical proof, production deployment, crawl/indexation outcome |
 
 ## Catalog governance
 

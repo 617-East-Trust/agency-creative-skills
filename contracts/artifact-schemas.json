@@ -46,6 +46,89 @@
         "completion_criteria": {"type": "array", "items": {"type": "string"}, "minItems": 1}
       },
       "additionalProperties": false
+    },
+    "remediationPlan": {
+      "type": "object",
+      "required": ["schema_version", "plan_id", "finding_id", "status", "action", "risk", "preflight", "rollback", "verification", "approval", "execution"],
+      "properties": {
+        "schema_version": {"const": 1},
+        "plan_id": {"type": "string", "minLength": 1},
+        "finding_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_-]{1,63}$"},
+        "status": {"enum": ["planned", "approval_requested", "approved", "snapshotted", "executed", "immediately_verified", "recrawl_recheck_pending", "closed", "rollback_required", "blocked"]},
+        "action": {
+          "type": "object",
+          "required": ["type", "owner", "target", "payload"],
+          "properties": {
+            "type": {"enum": ["gsc_sitemap_submit", "gsc_sitemap_delete", "github_pull_request", "cloudflare_deploy", "cms_publish"]},
+            "owner": {"type": "string", "minLength": 1},
+            "target": {"type": "object", "minProperties": 1},
+            "payload": {"type": "object", "minProperties": 1}
+          },
+          "additionalProperties": false
+        },
+        "risk": {
+          "type": "object",
+          "required": ["impact", "known_uncertainty"],
+          "properties": {
+            "impact": {"type": "string", "minLength": 1},
+            "known_uncertainty": {"type": "string", "minLength": 1}
+          },
+          "additionalProperties": false
+        },
+        "preflight": {
+          "type": "object",
+          "required": ["captured_at", "passed", "evidence", "checks"],
+          "properties": {
+            "captured_at": {"type": "string", "format": "date-time"},
+            "passed": {"type": "boolean"},
+            "evidence": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+            "checks": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+          },
+          "additionalProperties": false
+        },
+        "rollback": {
+          "type": "object",
+          "required": ["method", "owner", "trigger"],
+          "properties": {
+            "method": {"type": "string", "minLength": 1},
+            "owner": {"type": "string", "minLength": 1},
+            "trigger": {"type": "string", "minLength": 1}
+          },
+          "additionalProperties": false
+        },
+        "verification": {
+          "type": "object",
+          "required": ["immediate", "recrawl", "success_condition"],
+          "properties": {
+            "immediate": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+            "recrawl": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+            "success_condition": {"type": "string", "minLength": 1}
+          },
+          "additionalProperties": false
+        },
+        "approval": {
+          "type": "object",
+          "required": ["required", "state", "approved_by", "approved_at"],
+          "properties": {
+            "required": {"const": true},
+            "state": {"enum": ["not_requested", "requested", "approved", "rejected"]},
+            "approved_by": {"type": "string"},
+            "approved_at": {"type": "string"}
+          },
+          "additionalProperties": false
+        },
+        "execution": {
+          "type": "object",
+          "required": ["environment", "adapter", "result"],
+          "properties": {
+            "environment": {"enum": ["sandbox", "windows", "cloud-vps", "termux", "manual"]},
+            "adapter": {"type": "string"},
+            "result": {"type": "string"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
     }
   },
   "oneOf": [
@@ -99,6 +182,7 @@
         "rollback_owner": {"type": "string"}
       },
       "additionalProperties": false
-    }
+    },
+    {"$ref": "#/$defs/remediationPlan"}
   ]
 }

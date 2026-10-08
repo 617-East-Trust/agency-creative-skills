@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -68,6 +69,33 @@ def main() -> int:
     for skill in skills:
         if skill.parent.name not in agents:
             errors.append(f"AGENTS.md missing skill: {skill.parent.name}")
+
+    gsc = root / "skills" / "gsc-growth-operator"
+    remediation_files = [
+        gsc / "references" / "remediation-control.md",
+        gsc / "templates" / "remediation-plan.md",
+        gsc / "templates" / "remediation-plan.json",
+        gsc / "scripts" / "validate_remediation_plan.py",
+        gsc / "scripts" / "gsc_sitemap_action.py",
+    ]
+    for candidate in remediation_files:
+        if not candidate.exists():
+            errors.append(f"missing remediation asset: {candidate.relative_to(root)}")
+    if not errors and gsc.exists():
+        try:
+            json.loads((root / "contracts" / "artifact-schemas.json").read_text(encoding="utf-8"))
+            json.loads((gsc / "templates" / "remediation-plan.json").read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            errors.append(f"remediation JSON validation failed: {exc}")
+        else:
+            process = subprocess.run(
+                [sys.executable, str(gsc / "scripts" / "validate_remediation_plan.py"), "--plan", str(gsc / "templates" / "remediation-plan.json"), "--stage", "planned"],
+                text=True,
+                capture_output=True,
+                check=False,
+            )
+            if process.returncode:
+                errors.append("remediation plan template failed validator: " + process.stdout.strip())
 
     if errors:
         print("Pack validation failed:")
